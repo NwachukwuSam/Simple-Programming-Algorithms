@@ -1,0 +1,42 @@
+package Algorithms;
+
+import java.util.Scanner;
+
+public class SwapWithoutTemp {
+    int first = 0;
+    int second = 0;
+
+    public void swap(int a, int b){
+
+        a = a + b;
+        b = a - b;
+
+        a = a - b;
+       this.first = a;
+       this.second = b;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter the Numbers: ");
+        int first = input.nextInt();
+        int second = input.nextInt();
+        SwapWithoutTemp swapWithoutTemp = new SwapWithoutTemp();
+
+        swapWithoutTemp.swap(first, second);
+        System.out.println(swapWithoutTemp.toString());
+
+
+    }
+    @Override
+    public String toString() {
+        return String.format("""
+                ============================
+                FIRST : %s
+                SECOND: %s
+                ============================""", first,second);
+    }
+
+}
